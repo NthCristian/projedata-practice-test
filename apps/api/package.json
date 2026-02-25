@@ -1,0 +1,8 @@
+{
+  "name": "api",
+  "private": true,
+  "scripts": {
+    "build": "gradlew bootBuild",
+    "dev": "gradlew bootRun"
+  }
+}
