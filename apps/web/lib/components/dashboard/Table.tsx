@@ -1,4 +1,10 @@
-export default function Table({ table }: { table: Array<unknown> }) {
+export default function Table({
+  table,
+  headerLabels,
+}: {
+  table: Array<unknown>;
+  headerLabels?: Record<string, string>;
+}) {
   const keys = [
     ...new Set(table.flatMap((obj) => Object.keys(obj as object))),
   ].filter((k) => k !== "id");
@@ -8,7 +14,7 @@ export default function Table({ table }: { table: Array<unknown> }) {
       <thead>
         <tr className="border-b ">
           {keys.map((key) => (
-            <th key={key}>{key}</th>
+            <th key={key}>{headerLabels?.[key] ?? key}</th>
           ))}
         </tr>
       </thead>
