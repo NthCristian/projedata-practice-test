@@ -1,4 +1,4 @@
-import { getMaterials } from "@/lib/api/products/actions";
+import { getMaterials } from "@/lib/api/actions";
 import Table from "@/lib/components/dashboard/Table";
 
 export default async function MaterialsPage() {
