@@ -1,10 +1,10 @@
 export default function Table({ table }: { table: Array<unknown> }) {
-  const keys = Array.from(
-    new Set(table.flatMap((obj) => Object.keys(obj as object))),
-  );
+  const keys = [
+    ...new Set(table.flatMap((obj) => Object.keys(obj as object))),
+  ].filter((k) => k !== "id");
 
   return (
-    <table className="outline border-collapse [&_th,&_td]:py-3 [&_th,&_td]:px-8 **:whitespace-nowrap p-6 rounded-md *:[&>tr]:*:w-25">
+    <table className="outline border-collapse [&_th,&_td]:py-3 [&_th,&_td]:px-8 **:whitespace-nowrap p-6 rounded-md w-full table-fixed">
       <thead>
         <tr className="border-b ">
           {keys.map((key) => (
